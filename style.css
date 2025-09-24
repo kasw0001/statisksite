@@ -82,6 +82,7 @@ nav {
 }
 .sale-red {
     background-color: red;
+    padding: 8px;
 }
 .soldout-container {
     position: relative;
@@ -91,7 +92,7 @@ nav {
     filter: opacity(50%);
 }
 .soldout {
-    background-color: grey;
+    background-color:grey;opacity:0.7;
     color: white;
     padding: 2px 15px;
     position: absolute;
