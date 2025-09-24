@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    padding: 4rem 4rem;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    padding: 1rem 0 1rem 0;
+    height: 45px;
+}
+
+.nav-bar {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.category_list_container ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 0;
+}
+
+.category_list_container li {
+    background-color: grey;
+    padding: 2rem;
+    border-radius: 5px;
+}
+
+.category_list_container li a {
+    color: white;
+    text-decoration: none;
+}
+
+.grid-produkter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.produkter {
+    display: block;
+    width: 100%;
+}
+
+.produkter img {
+    width: 100%;      /* makes the image fill the grid cell horizontally */
+    height: 200px;    /* fixes the height so all images are the same */
+    object-fit: cover; /* crops or scales the image without distortion */
+    border-radius: 4px;
+    display: block;
+}
+
+.grid_3-1 {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.basket {
+    color: white;
+    background-color: rgb(175, 175, 175);
+    padding: 1rem;
+}
+
+.sub {
+    margin-left: 1rem;
+}
