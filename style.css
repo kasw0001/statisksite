@@ -74,3 +74,26 @@ nav {
 .sub {
     margin-left: 1rem;
 }
+
+.sale {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 20px;
+}
+.sale-red {
+    background-color: red;
+}
+.soldout-container {
+    position: relative;
+    text-align: center;
+}
+.soldout-container img {
+    filter: opacity(50%);
+}
+.soldout {
+    background-color: grey;
+    color: white;
+    padding: 2px 15px;
+    position: absolute;
+    top: 8px;
+}
