@@ -4,7 +4,7 @@ const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 console.log("mit id fra url'en:" + id);
 
-fetch("https://kea-alt-del.dk/t7/api/products/1163")
+fetch(`https://kea-alt-del.dk/t7/api/products/${id}`)
 .then((response) => response.json())
 .then((product) => {
 
