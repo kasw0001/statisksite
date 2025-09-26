@@ -13,7 +13,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products`)
          <p><strong>${product.productdisplayname}</strong></p>
          <p>${product.articletype} | ${product.brandname}</p>
         <div class="sale">
-         <p>Prev. DKK <span>${product.price}</span>,-<br>Now DKK 1560,-</p>
+         <p>Prev. DKK <span>${product.price}</span>,-<br>Now DKK ${Math.round(product.price - product.price * product.discount / 100)},-</p>
          <p class="sale-red">-34%</p>
         </div>
          <a href="produkt.html?id=${product.id}">Read More</a>

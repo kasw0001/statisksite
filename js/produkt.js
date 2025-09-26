@@ -1,7 +1,7 @@
 const productContainer = document.querySelector("#productContainer");
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
-console.log("mit id fra url'en:" + id);
+
 fetch(`https://kea-alt-del.dk/t7/api/products/${id}`)
 .then((response) => response.json())
 .then((product) => {
@@ -19,13 +19,13 @@ productContainer.innerHTML = `
          <p><strong>Color</strong></p>
          <p class="basecolour" class="sub">${product.basecolour}</p>
          <p><strong>Inventory number</strong></p>
-         <p class="sub">1163</p>
-         <h2>Nike</h2>
-         <p>Nike, creating experiences for today's athlete</p>
+         <p class="sub">${product.relid}</p>
+         <h2>${product.brandname}</h2>
+         <p>${product.brandbio}</p>
         </div>
         <div class="basket">
-         <h2>Sahara Team India Fanwear Round Neck Jersey</h2>
-         <p>Nike | Tshirts</p>
+         <h2>${product.productdisplayname}</h2>
+         <p>${product.brandname} | ${product.articletype}</p>
          <label for="size">Choose a size</label>
          <select id="size" name="size">
              <option value="s">S</option>
