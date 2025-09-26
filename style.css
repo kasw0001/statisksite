@@ -21,6 +21,9 @@ nav {
     margin: 0;
     padding: 0;
 }
+header a {
+    color: grey;
+}
 
 .category_list_container ul {
     list-style: none;
