@@ -5,7 +5,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products`)
 .then(showProducts) 
     
     function showProducts(data) {
-        console.log("data");
+        console.log(data);
         let markup = "";
         data.forEach(product => {
             markup += `      <div class="produkter">
