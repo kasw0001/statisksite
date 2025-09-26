@@ -6,7 +6,9 @@ console.log("mit id fra url'en:" + id);
 
 fetch("https://kea-alt-del.dk/t7/api/products/1163")
 .then((response) => response.json())
-.then((product) => {
+.then(showProduct) 
+    
+    function showProduct(product) {
 
 
 productContainer.innerHTML = `    
@@ -41,4 +43,4 @@ productContainer.innerHTML = `
     </div>
     </section>
 `;
-});
+}
