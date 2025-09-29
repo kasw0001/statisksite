@@ -1,4 +1,5 @@
 const productContainer = document.querySelector("#productContainer");
+
 const params = new URLSearchParams(window.location.search);
 const id = params.get("id");
 

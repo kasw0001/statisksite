@@ -6,6 +6,6 @@ fetch("https://kea-alt-del.dk/t7/api/categories")
 
 function showCategories(categories) {
     categories.forEach(category => {
-        category_list_container.innerHTML += `<a href="produktliste.html" class="categories">${category.category}</a>`
+        category_list_container.innerHTML += `<a href="produktliste.html?category=${category.category}" class="categories">${category.category}</a>`
     });
 }
