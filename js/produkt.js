@@ -8,18 +8,18 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${id}`)
 
 productContainer.innerHTML = `    
 <section>
-    <div>
+    <div class="first">
         <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="tshirt">
     </div>
     <div class="grid_3-1">
         <div class="info">
          <h2>Product Information</h2>
          <p><strong>Product name</strong></p>
-         <p class="productdisplayname" class="sub">${product.productdisplayname}</p>
+         <p class="productdisplayname">${product.productdisplayname}</p>
          <p><strong>Color</strong></p>
-         <p class="basecolour" class="sub">${product.basecolour}</p>
+         <p class="basecolour">${product.basecolour}</p>
          <p><strong>Inventory number</strong></p>
-         <p class="sub">${product.relid}</p>
+         <p>${product.relid}</p>
          <h2>${product.brandname}</h2>
          <p>${product.brandbio}</p>
         </div>

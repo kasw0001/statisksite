@@ -8,18 +8,18 @@ fetch(`https://kea-alt-del.dk/t7/api/products`)
         console.log(data);
         let markup = "";
         data.forEach(product => {
-            markup += `      <div class="produkter">
+            markup += `<div class="product ${product.discount && "onSale"} ${product.soldout && "soldOut"}">
          <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="tøj">
          <p><strong>${product.productdisplayname}</strong></p>
          <p>${product.articletype} | ${product.brandname}</p>
         <div class="sale">
          <p>Prev. DKK <span>${product.price}</span>,-<br>Now DKK ${Math.round(product.price - product.price * product.discount / 100)},-</p>
-         <p class="sale-red">-34%</p>
+         <p>${product.discount}%</p>
         </div>
          <a href="produkt.html?id=${product.id}">Read More</a>
       </div>`
         });
 
 
-productContainer.innerHTML += markup;
+productContainer.innerHTML = `<div class="grid_1-1-1-1">${markup}</div>`;
 }
