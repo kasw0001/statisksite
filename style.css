@@ -68,8 +68,11 @@ header a {
 .sale {
     display: flex;
     justify-content: space-between;
+}
+.rød {
     background-color: red;
-    padding: 8px;
+    padding: 4px;
+    color: white;
 }
 .soldout-container {
     position: relative;
