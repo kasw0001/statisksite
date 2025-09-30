@@ -4,9 +4,21 @@ const category = params.get("category");
 const productContainer = document.querySelector("main");
 const header = document.querySelector("h2").textContent = category
 
+document.querySelectorAll("#filters button").forEach(knap=>knap.addEventListener("click", showFiltered));
+
+function showFiltered() {
+    console.log("showFiltered");
+}
+
+let allData;
+
+
 fetch(`https://kea-alt-del.dk/t7/api/products?limit=20&category=${category}`)
 .then((response) => response.json())
-.then(showProducts) 
+.then((data) => {
+    allData = data;
+    showProducts(allData);
+}); 
     
     function showProducts(data) {
         console.log(data);
@@ -16,7 +28,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products?limit=20&category=${category}`)
          <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="tøj">
          <p><strong>${product.productdisplayname}</strong></p>
          <p>${product.articletype} | ${product.brandname}</p>
-          <p>DKK <span>${product.price}</span></p>
+          <p>DKK <span>${product.price},-</span></p>
         <div class=${product.discount ? "sale" : "hide"}>
          <p>Now DKK ${Math.round(product.price - product.price * product.discount / 100)},-</p>
          <p>${product.discount}%</p>
