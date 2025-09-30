@@ -7,7 +7,14 @@ const header = document.querySelector("h2").textContent = category
 document.querySelectorAll("#filters button").forEach(knap=>knap.addEventListener("click", showFiltered));
 
 function showFiltered() {
-    console.log("showFiltered");
+    console.log(this.dataset.gender);
+    const gender = this.dataset.gender;
+    if(gender=="All"){
+        showProducts(allData);
+    }else{
+        const udsnit = allData.filter(product => product.gender == gender);
+        showProducts(udsnit);
+    }
 }
 
 let allData;
