@@ -73,20 +73,32 @@ header a {
     background-color: red;
     padding: 4px;
     color: white;
+    border-radius: 4px;
 }
-.soldout-container {
-    position: relative;
-    text-align: center;
-}
-.soldout-container img {
-    filter: opacity(50%);
-}
-.soldout {
-    background-color:grey;opacity:0.7;
+#filters button {
+    background-color: grey;
     color: white;
-    padding: 2px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-bottom: 2rem;
+}
+.product.soldOut {
+    position: relative;
+}
+.product.soldOut::after {
+    content: "Sold out";
     position: absolute;
-    top: 8px;
+    top: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+.soldOut img {
+    filter: opacity(40%);
 }
 
 /* PRODUKT */
