@@ -4,11 +4,24 @@ const category = params.get("category");
 const productContainer = document.querySelector("main");
 const header = document.querySelector("h2").textContent = category
 
-document.querySelectorAll("#filters button").forEach(knap=>knap.addEventListener("click", showFiltered));
+document.querySelectorAll("#filters").forEach(knap=>knap.addEventListener("click", showFiltered));
+document.querySelectorAll("#sorting").forEach(knap=>knap.addEventListener("click", showSorted));
 
-function showFiltered() {
-    console.log(this.dataset.gender);
-    const gender = this.dataset.gender;
+function showSorted(event){
+    const direction = event.target.dataset.direction;
+    console.log(allData);
+    if(direction == "lohi"){
+        allData.sort((a, b) => a.price - b.price);
+        console.log(allData);
+    }else{
+        allData.sort((a, b) => b.price - a.price);
+    }
+    showProducts(allData);
+}
+
+function showFiltered(event) {
+    // console.log(event.target.dataset.gender);
+    const gender = event.target.dataset.gender;
     if(gender=="All"){
         showProducts(allData);
     }else{
@@ -40,7 +53,6 @@ function showProducts(data) {
          <p>Now DKK ${Math.round(product.price - product.price * product.discount / 100)},-</p>
          <p class="rød">- ${product.discount}%</p>
         </div>
-  
          ${product.soldout ? "" : `<a href="produkt.html?id=${product.id}">Read More</a>`}
       </div>`;
     });

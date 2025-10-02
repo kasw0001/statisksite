@@ -75,7 +75,7 @@ header a {
     color: white;
     border-radius: 4px;
 }
-#filters button {
+button {
     background-color: grey;
     color: white;
     border-radius: 4px;
