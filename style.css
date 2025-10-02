@@ -2,18 +2,15 @@ body {
     margin: 0;
     padding: 4rem 4rem;
 }
-
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-
 .logo {
     padding: 1rem 0 1rem 0;
     height: 45px;
 }
-
 .nav-bar {
     list-style: none;
     display: flex;
@@ -21,80 +18,99 @@ nav {
     margin: 0;
     padding: 0;
 }
+header {
+    padding-bottom: 2rem;
+}
+header a {
+    color: grey;
+}
 
-.category_list_container ul {
+/* INDEX */
+.category_list_container {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     padding: 0;
 }
-
-.category_list_container li {
+.categories {
     background-color: grey;
     padding: 2rem;
     border-radius: 5px;
 }
-
-.category_list_container li a {
+.category_list_container a {
     color: white;
     text-decoration: none;
 }
 
-.grid-produkter {
+/* PRODUKTLISTE */
+.grid_1-1-1-1 {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
 }
-
-.produkter {
-    display: block;
+.grid_1-1-1-1 img {
     width: 100%;
-}
-
-.produkter img {
-    width: 100%;      /* makes the image fill the grid cell horizontally */
-    height: 200px;    /* fixes the height so all images are the same */
-    object-fit: cover; /* crops or scales the image without distortion */
-    border-radius: 4px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
     display: block;
 }
+.product {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 1rem;
+}
+.hide{
+    display: none;
+}
+.sale {
+    display: flex;
+    justify-content: space-between;
+}
+.rød {
+    background-color: red;
+    padding: 4px;
+    color: white;
+    border-radius: 4px;
+}
+button {
+    background-color: grey;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-bottom: 2rem;
+}
+.product.soldOut {
+    position: relative;
+}
+.product.soldOut::after {
+    content: "Sold out";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    font-weight: bold;
+    border-radius: 4px;
+}
+.soldOut img {
+    filter: opacity(40%);
+}
 
+/* PRODUKT */
 .grid_3-1 {
     display: grid;
     grid-template-columns: 3fr 1fr;
 }
-
 .basket {
     color: white;
     background-color: rgb(175, 175, 175);
     padding: 1rem;
 }
-
-.sub {
-    margin-left: 1rem;
-}
-
-.sale {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 20px;
-}
-.sale-red {
-    background-color: red;
-    padding: 8px;
-}
-.soldout-container {
-    position: relative;
-    text-align: center;
-}
-.soldout-container img {
-    filter: opacity(50%);
-}
-.soldout {
-    background-color:grey;opacity:0.7;
-    color: white;
-    padding: 2px 15px;
-    position: absolute;
-    top: 8px;
+.first img{
+    border-radius: 5px;
 }
